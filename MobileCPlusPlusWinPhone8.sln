@@ -2,8 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileCPlusPlusWinPhone8", "MobileCPlusPlusWinPhone8\MobileCPlusPlusWinPhone8.csproj", "{2EF487CC-A336-466C-9B52-4F4C904AC1E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB85E97E-A765-402B-869F-2D5C900FF050} = {FB85E97E-A765-402B-869F-2D5C900FF050}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowsPhoneCPPLib", "WindowsPhoneCPPLib\WindowsPhoneCPPLib.vcxproj", "{FB85E97E-A765-402B-869F-2D5C900FF050}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPBridge", "CPPBridge\CPPBridge.vcxproj", "{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,8 +57,8 @@ Global
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|ARM.ActiveCfg = Debug|ARM
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|ARM.Build.0 = Debug|ARM
-		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Mixed Platforms.ActiveCfg = Debug|ARM
+		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Mixed Platforms.Build.0 = Debug|ARM
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Win32.ActiveCfg = Debug|Win32
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|Win32.Build.0 = Debug|Win32
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Debug|x86.ActiveCfg = Debug|Win32
@@ -67,6 +72,24 @@ Global
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Release|Win32.Build.0 = Release|Win32
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Release|x86.ActiveCfg = Release|Win32
 		{FB85E97E-A765-402B-869F-2D5C900FF050}.Release|x86.Build.0 = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|ARM.Build.0 = Debug|ARM
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|Win32.Build.0 = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|x86.ActiveCfg = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Debug|x86.Build.0 = Debug|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|Any CPU.ActiveCfg = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|ARM.ActiveCfg = Release|ARM
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|ARM.Build.0 = Release|ARM
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|Win32.ActiveCfg = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|Win32.Build.0 = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|x86.ActiveCfg = Release|Win32
+		{4C6F5164-ABDF-4BD7-842C-2E084ECEF793}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

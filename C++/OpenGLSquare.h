@@ -10,10 +10,14 @@
 #define __OpenGLSquare_H_
 
 #include <iostream>
-#ifdef ANDROID
+#ifdef __ANDROID__
   #include <GLES2/gl2.h>
 #elif __IPHONE_OS_VERSION_MIN_REQUIRED
 #include <OpenGLES/ES2/gl.h>
+#elif __WIN32
+#include "pch.h"
+#elif __WIN64
+#include "pch.h"
 #else
   #include <GL/glew.h>
 #endif
