@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "685501BA65CF6D831097DE57"
+               BuildableName = "MobileCPlusPlusCrossPlatform.app"
+               BlueprintName = "MobileCPlusPlusCrossPlatform"
+               ReferencedContainer = "container:MobileCPlusPlusCrossPlatform.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "685501BA65CF6D831097DE57"
+            BuildableName = "MobileCPlusPlusCrossPlatform.app"
+            BlueprintName = "MobileCPlusPlusCrossPlatform"
+            ReferencedContainer = "container:MobileCPlusPlusCrossPlatform.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>
