@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		685501068E57B7AD1BCA5946 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685505FAF57AF95B9B1CDFBD /* OpenGLES.framework */; };
 		68550128CFF22E65BC1D766D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685506ECFC31E123D6B61C12 /* CoreGraphics.framework */; };
+		685501403858C9D3C93D7767 /* ISquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550E083ACA3F9B4D5A1CFD /* ISquare.cpp */; };
+		68550142A629494D9D210737 /* ISquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550E083ACA3F9B4D5A1CFD /* ISquare.cpp */; };
 		68550164DFEA4706474F5ADF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68550A77CFFFDF552A9994B4 /* Default@2x.png */; };
 		685502AF8F7EE46470C702A8 /* caViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6855081909E385A5A991D92D /* caViewController_iPhone.xib */; };
 		685502B46171ED0337E4D7B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68550ACC8C09A01B92B81248 /* InfoPlist.strings */; };
@@ -16,16 +18,20 @@
 		68550342A4BD547BABE18179 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685502B1A8F2BBB6C58F6366 /* UIKit.framework */; };
 		685503987E57A5BCADA84F6B /* caViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68550B60A8F1884A95E991A6 /* caViewController.m */; };
 		68550429C516FEA15E70B377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68550F1598325F53205461E2 /* Foundation.framework */; };
+		685505ECB58A3610D8A491BE /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550269BC2D57A6BDCB2DE2 /* Matrix.cpp */; };
 		6855062EEB0960B0F2EFC883 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685502B1A8F2BBB6C58F6366 /* UIKit.framework */; };
 		6855067EF27CCC2835327344 /* OpenGLSquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550ED4D83652D99CB4DD2B /* OpenGLSquare.cpp */; };
+		685507BCFEE919626060D185 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550FA3CA40672C265FE91A /* Mesh.cpp */; };
 		685508EDA4B2C87903682832 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 685506CF8874C34D30D20708 /* main.m */; };
 		685509464B0F0E7119206DF4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 68550AA895B4B3AF3BEE4F48 /* Default.png */; };
+		685509C737085AE1F8AF32CF /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550FA3CA40672C265FE91A /* Mesh.cpp */; };
 		68550ADED25BE9A5ABAB5C4F /* libc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68550AFA67B3A9402B8C19BC /* libc.dylib */; };
 		68550AECA7AF1971B069A373 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 685506B6A93D618DB52383B6 /* libc++.dylib */; };
 		68550B3D29CE0A84709F17F6 /* MobileCPlusPlusCrossPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68550367E40CDFBF15521035 /* MobileCPlusPlusCrossPlatformTests.m */; };
 		68550BC78B191979B8607320 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 685507069DE3F0B82D5B16F8 /* Default-568h@2x.png */; };
 		68550C28BE2CDE5495DE279E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685502B1A8F2BBB6C58F6366 /* UIKit.framework */; };
 		68550C94043E8A5620538E69 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68550D835A0C44D42738C644 /* GLKit.framework */; };
+		68550CCB770017FE755115D5 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550269BC2D57A6BDCB2DE2 /* Matrix.cpp */; };
 		68550CD8356FBD114EC21263 /* caAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68550CEB0A91437538B99B90 /* caAppDelegate.m */; };
 		68550D2BF3FAC5C76F57C477 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685502CD1FCB12E6308C8CE6 /* InfoPlist.strings */; };
 		68550D631EDCC16B71385A8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68550F1598325F53205461E2 /* Foundation.framework */; };
@@ -47,10 +53,13 @@
 		685500B162DCC8B1E32B085D /* MobileCPlusPlusCrossPlatformTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "MobileCPlusPlusCrossPlatformTests-Info.plist"; sourceTree = "<group>"; };
 		6855011ECF33FB8722463DB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/caViewController_iPhone.xib; sourceTree = "<group>"; };
 		68550138C934E82B48F32270 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/caViewController_iPad.xib; sourceTree = "<group>"; };
+		68550269BC2D57A6BDCB2DE2 /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
 		685502B1A8F2BBB6C58F6366 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6855033756D18395ADC0207C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		68550367E40CDFBF15521035 /* MobileCPlusPlusCrossPlatformTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileCPlusPlusCrossPlatformTests.m; sourceTree = "<group>"; };
+		68550436846AB01C54BE3732 /* CubeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeData.h; sourceTree = "<group>"; };
 		6855049006825966D5D1995B /* caAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = caAppDelegate.h; sourceTree = "<group>"; };
+		6855055FFC931A5A577DAFA8 /* Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.h; sourceTree = "<group>"; };
 		68550567B4F4E1E44E14F867 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		685505FAF57AF95B9B1CDFBD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6855061A85484A784E709E9D /* MobileCPlusPlusCrossPlatform-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "MobileCPlusPlusCrossPlatform-Info.plist"; sourceTree = "<group>"; };
@@ -60,18 +69,24 @@
 		685506ECFC31E123D6B61C12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		685507069DE3F0B82D5B16F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6855070A0E98F528C5E2B0B2 /* MobileCPlusPlusCrossPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileCPlusPlusCrossPlatform-Prefix.pch"; sourceTree = "<group>"; };
+		6855092EB11700D5E7A8CD0F /* vect4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vect4.h; sourceTree = "<group>"; };
 		68550A77CFFFDF552A9994B4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		68550AA895B4B3AF3BEE4F48 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		68550ABF81A8A8CBA5DE6806 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68550AFA67B3A9402B8C19BC /* libc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libc.dylib; path = usr/lib/libc.dylib; sourceTree = SDKROOT; };
+		68550B560E379ECBCB1E9E5D /* ISquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISquare.h; sourceTree = "<group>"; };
 		68550B60A8F1884A95E991A6 /* caViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = caViewController.m; sourceTree = "<group>"; };
 		68550C3FE86082743A61C333 /* MobileCPlusPlusCrossPlatformTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileCPlusPlusCrossPlatformTests.h; sourceTree = "<group>"; };
 		68550CEB0A91437538B99B90 /* caAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = caAppDelegate.m; sourceTree = "<group>"; };
 		68550D5AE86BCE0E823CE598 /* OpenGLSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLSquare.h; sourceTree = "<group>"; };
 		68550D835A0C44D42738C644 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		68550E083ACA3F9B4D5A1CFD /* ISquare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ISquare.cpp; sourceTree = "<group>"; };
 		68550E3B2A9A2EACF828C052 /* caViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = caViewController.h; sourceTree = "<group>"; };
+		68550EC52C1638B60A0759D8 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		68550ED4D83652D99CB4DD2B /* OpenGLSquare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLSquare.cpp; sourceTree = "<group>"; };
 		68550F1598325F53205461E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68550F4DA0A622AAFCEC8A7C /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		68550FA3CA40672C265FE91A /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +138,15 @@
 			children = (
 				68550ED4D83652D99CB4DD2B /* OpenGLSquare.cpp */,
 				68550D5AE86BCE0E823CE598 /* OpenGLSquare.h */,
+				68550E083ACA3F9B4D5A1CFD /* ISquare.cpp */,
+				68550B560E379ECBCB1E9E5D /* ISquare.h */,
+				68550FA3CA40672C265FE91A /* Mesh.cpp */,
+				68550F4DA0A622AAFCEC8A7C /* Mesh.h */,
+				68550269BC2D57A6BDCB2DE2 /* Matrix.cpp */,
+				68550EC52C1638B60A0759D8 /* Matrix.h */,
+				6855092EB11700D5E7A8CD0F /* vect4.h */,
+				68550436846AB01C54BE3732 /* CubeData.h */,
+				6855055FFC931A5A577DAFA8 /* Stats.h */,
 			);
 			path = "C++";
 			sourceTree = "<group>";
@@ -301,6 +325,9 @@
 			files = (
 				68550B3D29CE0A84709F17F6 /* MobileCPlusPlusCrossPlatformTests.m in Sources */,
 				6855067EF27CCC2835327344 /* OpenGLSquare.cpp in Sources */,
+				685501403858C9D3C93D7767 /* ISquare.cpp in Sources */,
+				685507BCFEE919626060D185 /* Mesh.cpp in Sources */,
+				68550CCB770017FE755115D5 /* Matrix.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +339,9 @@
 				68550CD8356FBD114EC21263 /* caAppDelegate.m in Sources */,
 				685503987E57A5BCADA84F6B /* caViewController.m in Sources */,
 				685502FBBCAE70662BF0A92B /* OpenGLSquare.cpp in Sources */,
+				68550142A629494D9D210737 /* ISquare.cpp in Sources */,
+				685509C737085AE1F8AF32CF /* Mesh.cpp in Sources */,
+				685505ECB58A3610D8A491BE /* Matrix.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
