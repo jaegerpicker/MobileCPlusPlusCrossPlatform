@@ -103,6 +103,7 @@
 		68550F1598325F53205461E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68550F4DA0A622AAFCEC8A7C /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		68550FA3CA40672C265FE91A /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		68550FC09E0B9122C6584FA6 /* easywsclient.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = easywsclient.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +171,7 @@
 				6855092EB11700D5E7A8CD0F /* vect4.h */,
 				68550436846AB01C54BE3732 /* CubeData.h */,
 				6855055FFC931A5A577DAFA8 /* Stats.h */,
+				68550FC09E0B9122C6584FA6 /* easywsclient.hpp */,
 			);
 			path = "C++";
 			sourceTree = "<group>";
