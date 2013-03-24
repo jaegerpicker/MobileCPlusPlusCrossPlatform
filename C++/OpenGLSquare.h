@@ -26,8 +26,9 @@
 
 class OpenGLSquare {
 public:
-    void init(int width, int height, char* vShader, char* fShader);
+    void init(int width, int height, std::string vShader, std::string fShader);
     void step();
+    ~OpenGLSquare();
 };
 
 

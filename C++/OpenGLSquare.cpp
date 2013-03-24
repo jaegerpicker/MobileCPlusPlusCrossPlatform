@@ -258,18 +258,28 @@ void renderFrame() {
 
 
 
-void init(int width, int height, char* vShader, char* fShader)
+void OpenGLSquare::init(int width, int height, std::string vShader, std::string fShader)
 {
-    gVertexShader = vShader;
-    gFragmentShader = fShader;
+    gVertexShader = vShader.c_str();
+    gFragmentShader = fShader.c_str();
+    vShader.~basic_string();
+    fShader.~basic_string();
     setupGraphics(width, height);
     stats_init(&stats);
-
+    //free(&gVertexShader);
+    //free(&gFragmentShader);
+    //delete gVertexShader;
+    //delete gFragmentShader;
 }
 
-void step()
+void OpenGLSquare::step()
 {
     stats_startFrame(&stats);
     renderFrame();
     stats_endFrame(&stats);
+}
+
+OpenGLSquare::~OpenGLSquare() {
+    delete gVertexShader;
+    delete gFragmentShader;
 }

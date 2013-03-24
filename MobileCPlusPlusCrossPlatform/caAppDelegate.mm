@@ -33,10 +33,20 @@ OpenGLSquare * square;
     std::string * fshd = new std::string([fshader UTF8String]);
     square->init((int)5,
             (int)5,
-            (char*)vshd,
-            (char*)fshd
+            *vshd,
+            *fshd
     );
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self selector:@selector(doSquareStep) object:nil];
+    [myThread start];
     return YES;
+}
+
+
+-(void)doSquareStep
+{
+    while(TRUE) {
+        square->step();
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
