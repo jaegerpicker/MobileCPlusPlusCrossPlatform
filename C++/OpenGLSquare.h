@@ -10,6 +10,7 @@
 #define __OpenGLSquare_H_
 
 #include <iostream>
+#include <string>
 #ifdef __ANDROID__
   #include <GLES2/gl2.h>
 #elif __IPHONE_OS_VERSION_MIN_REQUIRED
@@ -24,8 +25,9 @@
 
 
 class OpenGLSquare {
-
-
+public:
+    void init(int width, int height, char* vShader, char* fShader);
+    void step();
 };
 
 

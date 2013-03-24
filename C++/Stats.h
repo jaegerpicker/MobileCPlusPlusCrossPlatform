@@ -9,15 +9,24 @@
 #ifndef _STATS_H
 #define _STATS_H
 
-#include <android/log.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
 
 #define  LOG_TAG    "libspinningcube"
+#ifdef __ANDROID__
+#include <android/log.h>
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+#elif __WIN32
+#define LOGI
+#define LOGE
+#elif __IPHONE_OS_VERSION_MIN_REQUIRED
+#define LOGI
+#define LOGE
+#endif
 
 /* simple stats management */
 typedef struct {
@@ -41,9 +50,9 @@ typedef struct {
 /* Return current time in milliseconds */
 static double now_ms(void)
 {
-    struct timeval tv;
-    gettimeofday(&tv, NULL);
-    return tv.tv_sec*1000. + tv.tv_usec/1000.;
+    std::time_t tv = std::time(nullptr);
+    localtime(&tv);
+    return tv;
 }
 
 static void

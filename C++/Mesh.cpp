@@ -6,10 +6,18 @@
 
 
 #include "mesh.h"
+#ifdef __ANDROID__
 #include <android/log.h>
 #define  LOG_TAG    "libspinningcube"
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+#elif __WIN32
+#define LOGI
+#define LOGE
+#elif __IPHONE_OS_VERSION_MIN_REQUIRED
+#define LOGI
+#define LOGE
+#endif
 
 cMesh::cMesh()
 {
@@ -230,19 +238,4 @@ void cMesh::computeVerticesNormals()
 
         SAFE_DELETE_ARRAY( sharedArray );*/
 };
-Hide details
-Change log
-r5 by floydude on Jun 21, 2010   Diff
-        Adding a curl shader to page-curl a mesh.
-You need to switch the shader in the view,
-apart from setting USE_MESH=1 in
-        gl_code.cpp
-        Go to:
-Older revisions
-        r4 by floydude on Jun 17, 2010   Diff
-        r3 by floydude on Jun 17, 2010   Diff
-        All revisions of this file
-        File info
-        Size: 5776 bytes, 243 lines
-        View raw file
 

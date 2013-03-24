@@ -18,7 +18,7 @@ public:
     virtual vector<float> calculateSquareVertices(int top, int bottom, int left, int right) = 0;
     virtual void rotateSquare(int dir, int angle) = 0;
     virtual void draw() = 0;
-    virtual void ~ISquare();
+    virtual ~ISquare();
 };
 
 
