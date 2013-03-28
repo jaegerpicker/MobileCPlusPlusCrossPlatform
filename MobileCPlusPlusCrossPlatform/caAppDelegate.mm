@@ -11,6 +11,9 @@
 #import "caViewController.h"
 #import "OpenGLSquare.h"
 #import "string.h"
+#import "easywsclient.hpp"
+#import <assert.h>
+#import <stdio.h>
 
 @implementation caAppDelegate
 OpenGLSquare * square;
@@ -31,13 +34,15 @@ OpenGLSquare * square;
     NSString *fshader = @"uniform mediump float intensity;\nprecision mediump float;\nvarying vec3 vvColor;\nvoid main()\n{\n    gl_FragColor = vec4(vvColor.x,vvColor.y,vvColor.z,1.0);\n}";
     std::string * vshd = new std::string([vshader UTF8String]);
     std::string * fshd = new std::string([fshader UTF8String]);
-    square->init((int)5,
-            (int)5,
-            *vshd,
-            *fshd
-    );
-    NSThread* myThread = [[NSThread alloc] initWithTarget:self selector:@selector(doSquareStep) object:nil];
-    [myThread start];
+    //square->init((int)5,
+    //        (int)5,
+    //        *vshd,
+    //        *fshd
+    //);
+    //NSThread* myThread = [[NSThread alloc] initWithTarget:self selector:@selector(doSquareStep) object:nil];
+    //[myThread start];
+    NSThread * wsThread = [[NSThread alloc] initWithTarget:self selector:@selector(wsComms) object:nil];
+    [wsThread start];
     return YES;
 }
 
@@ -46,6 +51,25 @@ OpenGLSquare * square;
 {
     while(TRUE) {
         square->step();
+    }
+}
+
+-(void)wsComms
+{
+    using easywsclient::WebSocket;
+    WebSocket::pointer ws = WebSocket::from_url("ws://192.168.0.8:8765/chat/");
+    //assert(ws);
+    ws->send("goodbye");
+    ws->send("hello");
+    while (true) {
+        std::string message;
+        ws->send("loop");
+        ws->poll();
+        ws->dispatch([&message](const std::string & message_) {
+            printf(">>> %s\n", message_.c_str());
+            message = message_;
+        });
+        if (message == "world") { break; }
     }
 }
 

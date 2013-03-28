@@ -14,14 +14,14 @@ class chatServer(sockjs.tornado.SockJSConnection):
     currSession = 0
     clients = set()
 
-    def open(self):
+    def on_open(self, info):
         print "WebSocket open"
         self.clients.add(self)
         self.broadcast(self.clients, "Someone Joined")
 
     def on_message(self, message):
         print "message received"
-        inputs = tornado.escape.json_decode(message)
+        #inputs = tornado.escape.json_decode(message)
         self.broadcast(self.clients, message)
 
 
@@ -34,16 +34,20 @@ class chatServer(sockjs.tornado.SockJSConnection):
 
 
 
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        return "no root config"
 
 
-application = tornado.web.Application([
-    (r'/chat/', chatServer),
-])
 
 if __name__ == '__main__':
-    http_server = tornado.httpserver.HTTPServer(application)
-    http_server.listen(8765)
-
+    import logging
+    logging.getLogger().setLevel(logging.DEBUG)
+    ChatRouter = sockjs.tornado.SockJSRouter(chatServer, '/chat')
+    application = tornado.web.Application(
+        [(r"/", MainHandler)] + ChatRouter.urls
+        )
+    application.listen(8765)
     io_loop = tornado.ioloop.IOLoop.instance()
     try:
         io_loop.start()
