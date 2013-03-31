@@ -16,6 +16,7 @@
 		295CBA2B16FEA5B700242DE2 /* Stats.h in Sources */ = {isa = PBXBuildFile; fileRef = 6855055FFC931A5A577DAFA8 /* Stats.h */; };
 		295CBA2C16FEA9BF00242DE2 /* caAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 6855049006825966D5D1995B /* caAppDelegate.h */; };
 		295CBA2D16FEA9C500242DE2 /* caViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 68550E3B2A9A2EACF828C052 /* caViewController.h */; };
+		2969E1661707AC3D001C89CF /* liblibwebsockets.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2969E1651707AC2A001C89CF /* liblibwebsockets.dylib */; };
 		685501068E57B7AD1BCA5946 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685505FAF57AF95B9B1CDFBD /* OpenGLES.framework */; };
 		68550128CFF22E65BC1D766D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685506ECFC31E123D6B61C12 /* CoreGraphics.framework */; };
 		685501403858C9D3C93D7767 /* ISquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550E083ACA3F9B4D5A1CFD /* ISquare.cpp */; };
@@ -29,7 +30,6 @@
 		685503FBC3E95BA2E4B34AC3 /* libc++abi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6855070A110B7B529F1709E7 /* libc++abi.dylib */; };
 		68550429C516FEA15E70B377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68550F1598325F53205461E2 /* Foundation.framework */; };
 		685505ECB58A3610D8A491BE /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550269BC2D57A6BDCB2DE2 /* Matrix.cpp */; };
-		6855062EEB0960B0F2EFC883 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685502B1A8F2BBB6C58F6366 /* UIKit.framework */; };
 		6855067EF27CCC2835327344 /* OpenGLSquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550ED4D83652D99CB4DD2B /* OpenGLSquare.cpp */; };
 		685507BCFEE919626060D185 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68550FA3CA40672C265FE91A /* Mesh.cpp */; };
 		685508EDA4B2C87903682832 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 685506CF8874C34D30D20708 /* main.m */; };
@@ -51,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2969E1641707AC2A001C89CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2969E1601707AC2A001C89CF /* libwebsockets.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2969E0A01707A711001C89CF;
+			remoteInfo = libwebsockets;
+		};
 		68550778240D68BCB947A783 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6855031CF6B009ABAEF68645 /* Project object */;
@@ -61,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2969E1601707AC2A001C89CF /* libwebsockets.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libwebsockets.xcodeproj; path = libwebsockets/libwebsockets/libwebsockets/libwebsockets.xcodeproj; sourceTree = "<group>"; };
 		685500B162DCC8B1E32B085D /* MobileCPlusPlusCrossPlatformTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "MobileCPlusPlusCrossPlatformTests-Info.plist"; sourceTree = "<group>"; };
 		6855011ECF33FB8722463DB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/caViewController_iPhone.xib; sourceTree = "<group>"; };
 		68550138C934E82B48F32270 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/caViewController_iPad.xib; sourceTree = "<group>"; };
@@ -120,12 +128,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2969E1661707AC3D001C89CF /* liblibwebsockets.dylib in Frameworks */,
 				68550342A4BD547BABE18179 /* UIKit.framework in Frameworks */,
 				68550429C516FEA15E70B377 /* Foundation.framework in Frameworks */,
 				68550128CFF22E65BC1D766D /* CoreGraphics.framework in Frameworks */,
 				68550C94043E8A5620538E69 /* GLKit.framework in Frameworks */,
 				685501068E57B7AD1BCA5946 /* OpenGLES.framework in Frameworks */,
-				6855062EEB0960B0F2EFC883 /* UIKit.framework in Frameworks */,
 				68550F08E08F9C640874B138 /* CoreAudio.framework in Frameworks */,
 				685503FBC3E95BA2E4B34AC3 /* libc++abi.dylib in Frameworks */,
 				68550AECA7AF1971B069A373 /* libc++.dylib in Frameworks */,
@@ -137,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2969E1611707AC2A001C89CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2969E1651707AC2A001C89CF /* liblibwebsockets.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		68550282E4BC3099FF413401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +212,7 @@
 		6855047B9AAF6B5C1AD9DA49 = {
 			isa = PBXGroup;
 			children = (
+				2969E1601707AC2A001C89CF /* libwebsockets.xcodeproj */,
 				685503C6C75F7EB39D259617 /* Products */,
 				68550282E4BC3099FF413401 /* Frameworks */,
 				685506C9596D7AE7CAA36190 /* MobileCPlusPlusCrossPlatform */,
@@ -285,6 +302,9 @@
 /* Begin PBXProject section */
 		6855031CF6B009ABAEF68645 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = 6855090E79728074DF5496C6 /* Build configuration list for PBXProject "MobileCPlusPlusCrossPlatform" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -295,6 +315,12 @@
 			mainGroup = 6855047B9AAF6B5C1AD9DA49;
 			productRefGroup = 685503C6C75F7EB39D259617 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2969E1611707AC2A001C89CF /* Products */;
+					ProjectRef = 2969E1601707AC2A001C89CF /* libwebsockets.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				685501BA65CF6D831097DE57 /* MobileCPlusPlusCrossPlatform */,
@@ -302,6 +328,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2969E1651707AC2A001C89CF /* liblibwebsockets.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			name = liblibwebsockets.dylib;
+			path = libwebsockets.a;
+			remoteRef = 2969E1641707AC2A001C89CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6855015963FA5E84D0DBB83A /* Resources */ = {
@@ -430,9 +467,18 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileCPlusPlusCrossPlatform/MobileCPlusPlusCrossPlatform-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"~/MobileCPlusPlusCrossPlatform/C++",
+					/Users/shawn/MobileCPlusPlusCrossPlatform/libwebsockets/libwebsockets/lib,
+				);
 				INFOPLIST_FILE = "MobileCPlusPlusCrossPlatform/MobileCPlusPlusCrossPlatform-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "~/MobileCPlusPlusCrossPlatform/C++/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -455,7 +501,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "~/MobileCPlusPlusCrossPlatform/C++//**";
+				HEADER_SEARCH_PATHS = /Users/shawn/MobileCPlusPlusCrossPlatform/MobileCPlusPlusCrossPlatform/Library/openssl/openssl/include;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -487,11 +533,20 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileCPlusPlusCrossPlatform/MobileCPlusPlusCrossPlatform-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"~/MobileCPlusPlusCrossPlatform/C++",
+					/Users/shawn/MobileCPlusPlusCrossPlatform/libwebsockets/libwebsockets/lib,
+				);
 				INFOPLIST_FILE = "MobileCPlusPlusCrossPlatform/MobileCPlusPlusCrossPlatform-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "~/MobileCPlusPlusCrossPlatform/C++";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "~/MobileCPlusPlusCrossPlatform/C++/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -538,7 +593,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "~/MobileCPlusPlusCrossPlatform/C++//**";
+				HEADER_SEARCH_PATHS = /Users/shawn/MobileCPlusPlusCrossPlatform/MobileCPlusPlusCrossPlatform/Library/openssl/openssl/include;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
