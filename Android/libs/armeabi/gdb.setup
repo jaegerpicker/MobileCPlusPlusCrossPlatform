@@ -1,0 +1,2 @@
+set solib-search-path .//obj/local/armeabi
+directory /Users/shawn/Downloads/android-ndk-r8c/platforms/android-14/arch-arm/usr/include jni/../../C++/ /Users/shawn/Downloads/android-ndk-r8c/sources/cxx-stl/stlport/stlport /Users/shawn/Downloads/android-ndk-r8c/sources/cxx-stl//gabi++/include /Users/shawn/MobileCPlusPlusCrossPlatform/libwebsockets/libwebsockets/lib
