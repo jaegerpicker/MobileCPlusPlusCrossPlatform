@@ -18,9 +18,18 @@
 #import "syslog.h"
 
 @implementation caAppDelegate
+@synthesize toSendMessage;
+@synthesize send;
+@synthesize chatLog;
 OpenGLSquare * square;
 int force_exit = 0;
 std::string * sendBuf = new std::string("0");
+BOOL newmessage = false;
+
+-(void)sendText:(NSString *)msg {
+    sendBuf->assign([msg UTF8String]);
+    newmessage = true;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -31,204 +40,38 @@ std::string * sendBuf = new std::string("0");
     } else {
         self.viewController = [[caViewController alloc] initWithNibName:@"caViewController_iPad" bundle:nil];
     }
-    //self.window.rootViewController = self.viewController;
-    //[self.window makeKeyAndVisible];
-    //square = new OpenGLSquare();
-    //NSString *vshader = @"attribute vec4 vPosition;\nattribute vec3 vColor;\nuniform mat4 mvp;\nvarying vec3 vvColor;\nvoid main() \n{\n    vvColor = vColor.xyz;\n    gl_Position = mvp * vPosition;\n}";
-    //NSString *fshader = @"uniform mediump float intensity;\nprecision mediump float;\nvarying vec3 vvColor;\nvoid main()\n{\n    gl_FragColor = vec4(vvColor.x,vvColor.y,vvColor.z,1.0);\n}";
-    //std::string * vshd = new std::string([vshader UTF8String]);
-    //std::string * fshd = new std::string([fshader UTF8String]);
-    //square->init((int)5,
-    //        (int)5,
-    //        *vshd,
-    //        *fshd
-    //);
-    //NSThread* myThread = [[NSThread alloc] initWithTarget:self selector:@selector(doSquareStep) object:nil];
-    //[myThread start];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    return YES;
+    
+}
+
+-(void)startChatThread {
     NSThread * wsThread = [[NSThread alloc] initWithTarget:self selector:@selector(wsComms) object:nil];
     [wsThread start];
-    return YES;
-    sendBuf = new std::string("testing the global buffer");
+    sendBuf->assign("testing the global buffer");
+    newmessage = true;
 }
-
-
--(void)doSquareStep
-{
-    while(TRUE) {
-        square->step();
-    }
-}
-
-//#define MAX_CHAT_PAYLOAD 1400
-
-/*struct per_session_data__chat {
-	unsigned char buf[LWS_SEND_BUFFER_PRE_PADDING + MAX_CHAT_PAYLOAD + LWS_SEND_BUFFER_POST_PADDING];
-	unsigned int len;
-	unsigned int index;
-};
-
-
-
-static int
-callback_chat(struct libwebsocket_context *context, struct libwebsocket *wsi, enum libwebsocket_callback_reasons reason, void *user, void * in, size_t len) {
-    struct per_session_data__chat *pss = (struct per_session_data__chat *)user;
-    int n;
-    
-    switch(reason) {
-        case LWS_CALLBACK_SERVER_WRITEABLE:
-            n = libwebsocket_write(wsi, &pss->buf[LWS_SEND_BUFFER_PRE_PADDING], pss->len, LWS_WRITE_HTTP);
-            if (n < 0) {
-                lwsl_err("ERROR %d writing to socket, hanging up\n", n);
-                return 1;
-            }
-            if (n < pss->len) {
-                lwsl_err("Partial write\n");
-                return -1;
-            }
-            break;
-            
-        case LWS_CALLBACK_RECEIVE:
-            if (len > MAX_CHAT_PAYLOAD) {
-                lwsl_err("Server received packet bigger than %u, hanging up\n", MAX_CHAT_PAYLOAD);
-                return 1;
-            }
-            memcpy(&pss->buf[LWS_SEND_BUFFER_PRE_PADDING], in, len);
-            pss->len = len;
-            libwebsocket_callback_on_writable(context, wsi);
-            break;
-        case LWS_CALLBACK_CLIENT_ESTABLISHED:
-            lwsl_notice("Client had connected\n");
-            pss->index = 0;
-            break;
-        case LWS_CALLBACK_CLIENT_RECEIVE:
-            lwsl_notice("Client RX: %s", (char *)in);
-            break;
-        case LWS_CALLBACK_CLIENT_WRITEABLE:
-            pss->len = sprintf((char *)&pss->buf[LWS_SEND_BUFFER_PRE_PADDING], "hello form libwebsocket-test-chat client pid %d index %d\n", getpid(), pss->index++);
-            lwsl_notice("Client TX: %s", &pss->buf[LWS_SEND_BUFFER_PRE_PADDING]);
-            n = libwebsocket_write(wsi, &pss->buf[LWS_SEND_BUFFER_PRE_PADDING], pss->len, LWS_WRITE_HTTP);
-            if(n < 0) {
-                lwsl_err("ERROR %d writing to socket, hanging up\n", n);
-                return -1;
-            }
-            if(n < pss->len) {
-                lwsl_err("Partial write\n");
-                return -1;
-            }
-            break;
-        default:
-            break;
-    }
-    return 0;
-}
-
-static struct libwebsocket_protocols protocols[] = {
-    
-	{
-		"default",
-		callback_chat,
-		sizeof(struct per_session_data__chat)
-	},
-	{
-		NULL, NULL, 0
-	}
-};
-
-void sighandler(int sig)
-{
-	force_exit = 1;
-}*/
 
 -(void)wsComms
 {
-    /*int n = 0;
-    int port = 8765;
-    const char* address = "192.168.0.8";
-    int use_ssl = 0;
-    int opts = 0;
-    int listen_port = CONTEXT_PORT_NO_LISTEN;
-    int syslog_options = LOG_PID | LOG_PERROR;
-    int debug_level = 7;
-    int client = 1;
-    int rate_us = 250000;
-	unsigned int oldus = 0;
-    const char *interface = NULL;
-    char interface_name[128] = "";
-    struct libwebsocket_context *context;
-    struct libwebsocket *wsi;
-    struct lws_context_creation_info info;
-    
-    std::memset(&info, 0, sizeof( info));
-    setlogmask(LOG_UPTO(LOG_DEBUG));
-    openlog("lwsts", syslog_options, LOG_DEBUG);
-    
-    lws_set_log_level(debug_level, lwsl_emit_syslog);
-    
-    info.port = port;
-    info.iface = interface;
-    info.protocols = protocols;
-    info.gid = -1;
-    info.uid = -1;
-    info.options = opts;
-    
-    context = libwebsocket_create_context(&info);
-    if(context == NULL) {
-        lwsl_err("libwebsocket init failed");
-        return;
-    }
-    lwsl_notice("Client connecting to %s:%u....\n", address, port);
-
-    wsi = libwebsocket_client_connect(context, address,
-                                      port, use_ssl, "/chatsocket", address,
-                                      "origin", NULL, -1);
-    if (!wsi) {
-        lwsl_err("Client failed to connect to %s:%u\n", address, port);
-        return;
-    }
-    lwsl_notice("Client connected to %s:%u\n", address, port);
-    
-    signal(SIGINT, sighandler);
-    n = 0;
-    while(n >= 0 && !force_exit) {
-        struct timeval tv;
-        gettimeofday(&tv, NULL);
-        
-        if(((unsigned int)tv.tv_usec - oldus) > rate_us) {
-            libwebsocket_callback_on_writable_all_protocol(&protocols[0]);
-            oldus = tv.tv_usec;
-        }
-    }
-    
-    libwebsocket_context_destroy(context);
-    
-	lwsl_notice("libwebsockets-test-chat exited cleanly\n");
-    
-	closelog();
-    
-	return;*/
     using easywsclient::WebSocket;
     WebSocket::pointer ws = WebSocket::from_url("ws://192.168.0.8:8765/chatsocket");
     //assert(ws);
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    
-    [dict setValue:@"hello" forKey:@"body"];
-    NSError *jsonError = nil;
-    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&jsonError];
-    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSASCIIStringEncoding];
+    NSString * jsonString = jsonify(new std::string("Hello"));
     std::string toSend = *new std::string([jsonString UTF8String]);
     ws->send(toSend);
     //ws->send("{'body':'goodbye'}");
     //ws->send("{'body':'hello'}");
+    //std::string * compare = new std::string("0");
     while (true) {
         std::string message;
-        if(strncmp(sendBuf->c_str(),"0", sizeof(sendBuf->c_str()))) {
-            [dict removeAllObjects];
-            [dict setValue:[NSString stringWithCString:sendBuf->c_str()] forKey:@"body"];
-            jsonData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&jsonError];
-            jsonString = [[NSString alloc] initWithData:jsonData encoding:NSASCIIStringEncoding];
+        if(newmessage) {
+            jsonString = jsonify(sendBuf);
             toSend = *new std::string([jsonString UTF8String]);
             ws->send(toSend);
-            sendBuf = new std::string("0");
+            sendBuf->assign("0");
+            newmessage = false;
         }
         //ws->send("{'body':'loop'}");
         
@@ -237,8 +80,26 @@ void sighandler(int sig)
             printf(">>> %s\n", message_.c_str());
             message = message_;
         });
+        if(message.length() > 0) {
+            NSString * mess = [[NSString alloc] initWithCString:(&message)->c_str()];
+            NSError * jErr = nil;
+            NSData * messData = [mess dataUsingEncoding:NSUnicodeStringEncoding];
+            NSDictionary * jdict = [NSJSONSerialization JSONObjectWithData:messData options:0 error:&jErr];
+            NSString * body = [[NSString alloc] initWithString:[jdict objectForKey:@"body"]];
+            [chatLog performSelectorOnMainThread:@selector(setText:) withObject:[NSString stringWithFormat:@"%@ \n %@", chatLog.text, body] waitUntilDone:YES];
+        }
         if (message == "world") { break; }
     }
+}
+
+NSString *jsonify(std::string *pre) {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict removeAllObjects];
+    NSError *jsonError = nil;
+    [dict setValue:[NSString stringWithCString:pre->c_str()] forKey:@"body"];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&jsonError];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSASCIIStringEncoding];
+    return jsonString;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

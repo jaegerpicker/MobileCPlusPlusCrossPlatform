@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88338161-852c-486e-bcc7-340da0c8bd96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/chat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/chat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/message.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Android/jni/Application.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Android/src/com/codeart/mobilecplusplus/MainActivity.java" afterPath="$PROJECT_DIR$/../../Android/src/com/codeart/mobilecplusplus/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caViewController.mm" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caViewController.mm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/en.lproj/caViewController_iPhone.xib" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/en.lproj/caViewController_iPhone.xib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../libwebsockets/libwebsockets" afterPath="$PROJECT_DIR$/../../libwebsockets/libwebsockets" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.gitignore" afterPath="$PROJECT_DIR$/../../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform.xcodeproj/xcuserdata/shawn.xcuserdatad/xcschemes/MobileCPlusPlusCrossPlatform.xcscheme" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform.xcodeproj/xcuserdata/shawn.xcuserdatad/xcschemes/MobileCPlusPlusCrossPlatform.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../../Android/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caAppDelegate.h" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caAppDelegate.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caAppDelegate.mm" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caAppDelegate.mm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatServer.py" afterPath="$PROJECT_DIR$/chatServer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caViewController.h" afterPath="$PROJECT_DIR$/../../MobileCPlusPlusCrossPlatform/caViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../C++/easywsclient.hpp" afterPath="$PROJECT_DIR$/../../C++/easywsclient.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Android/res/layout/main.xml" afterPath="$PROJECT_DIR$/../../Android/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Android/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../Android/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -42,6 +43,11 @@
             <state line="65" column="0" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.35901386">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
+                <marker date="1364705540000" expanded="true" signature="313:823" placeholder="..." />
+                <marker date="1364705540000" expanded="true" signature="337:823" placeholder="..." />
+                <marker date="1364705540000" expanded="true" signature="1021:2226" placeholder="..." />
+                <marker date="1364705540000" expanded="true" signature="1815:2226" placeholder="..." />
+                <marker date="1364705540000" expanded="true" signature="2240:2379" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -72,7 +78,12 @@
         <entry file="file://$PROJECT_DIR$/static/chat.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="57" column="2" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0">
-              <folding />
+              <folding>
+                <marker date="1364705525000" expanded="true" signature="29:463" placeholder="{...}" />
+                <marker date="1364705525000" expanded="true" signature="493:635" placeholder="{...}" />
+                <marker date="1364705525000" expanded="true" signature="671:886" placeholder="{...}" />
+                <marker date="1364705525000" expanded="true" signature="903:1547" placeholder="{&quot;socket&quot;: null...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -480,7 +491,12 @@
     <entry file="file://$PROJECT_DIR$/static/chat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="2" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1364705525000" expanded="true" signature="29:463" placeholder="{...}" />
+            <marker date="1364705525000" expanded="true" signature="493:635" placeholder="{...}" />
+            <marker date="1364705525000" expanded="true" signature="671:886" placeholder="{...}" />
+            <marker date="1364705525000" expanded="true" signature="903:1547" placeholder="{&quot;socket&quot;: null...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -489,6 +505,11 @@
         <state line="65" column="0" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.35901386">
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1364705540000" expanded="true" signature="313:823" placeholder="..." />
+            <marker date="1364705540000" expanded="true" signature="337:823" placeholder="..." />
+            <marker date="1364705540000" expanded="true" signature="1021:2226" placeholder="..." />
+            <marker date="1364705540000" expanded="true" signature="1815:2226" placeholder="..." />
+            <marker date="1364705540000" expanded="true" signature="2240:2379" placeholder="..." />
           </folding>
         </state>
       </provider>

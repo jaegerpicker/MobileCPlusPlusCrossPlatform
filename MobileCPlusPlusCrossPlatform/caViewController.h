@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface caViewController : UIViewController
-
+@property (strong, nonatomic) IBOutlet UIButton * send;
+@property (strong, nonatomic) IBOutlet UITextView * chatLog;
+@property (strong, nonatomic) IBOutlet UITextField * toSendMessage;
+@property (strong, nonatomic) IBOutlet UIScrollView * scrollView;
+-(IBAction)sendText:(id)sender;
 @end

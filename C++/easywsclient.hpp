@@ -15,6 +15,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdint.h>
+#ifdef ANDROID
+#include <netinet/in.h>
+#endif
 
 #include <vector>
 #include <string>
