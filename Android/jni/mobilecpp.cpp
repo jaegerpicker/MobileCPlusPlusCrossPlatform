@@ -64,7 +64,7 @@ void handle_message(const std::string & message)
         return;
     }
     //vm->AttachCurrentThread(&env, NULL);
-    //mainAct = env->FindClass("com/codeart/mobilecplusplus/MainActivity");
+    mainAct = env->FindClass("com/codeart/mobilecplusplus/MainActivity");
     //jthrowable exc;
     //exc = env->ExceptionOccurred();
     //     if (exc) {
@@ -84,18 +84,15 @@ void handle_message(const std::string & message)
     LOGE("%i", appendMessage);
 
     //jstring jmess = env->NewGlobalRef(*mess);
-    //env->CallVoidMethod(mainAct, appendMessage, mess);
+    env->CallVoidMethod(mainAct, appendMessage, mess);
     env->DeleteLocalRef(mess);
     //vm->DetachCurrentThread();
 }
 
 void* startWS(void*) {
     using easywsclient::WebSocket;
-    WebSocket::pointer ws = WebSocket::from_url("ws://192.168.0.8:8765/chatsocket");
-    //assert(ws);
-    //ws->send("goodbye");
-    //ws->send("hello");
-    while (message != "world") {
+    WebSocket::pointer ws = WebSocket::from_url("ws://10.151.37.36:8765/chatsocket");
+    while (true) {
         if(newmessage){
             ws->send(*sendBuf);
             sendBuf->assign("0");

@@ -56,7 +56,7 @@ BOOL newmessage = false;
 -(void)wsComms
 {
     using easywsclient::WebSocket;
-    WebSocket::pointer ws = WebSocket::from_url("ws://192.168.0.8:8765/chatsocket");
+    WebSocket::pointer ws = WebSocket::from_url("ws://10.151.37.36:8765/chatsocket");
     //assert(ws);
     NSString * jsonString = jsonify(new std::string("Hello"));
     std::string toSend = *new std::string([jsonString UTF8String]);
